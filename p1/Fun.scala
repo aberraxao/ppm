@@ -93,9 +93,74 @@ def isTriangle(a:Double, b:Double, c:Double): Boolean = {
 Write a method abrev that receives a string containing a person's name and returns a
 string with the first and last name.
 For example, abrev "José Carlos Martins Sousa" = "José Sousa"
+
+scala> Fun.abrev("José Carlos Martins Sousa")
+res19: String = José Sousa
+
 */
-def abrev(a:Double, b:Double, c:Double): Boolean = {
-	((a+b>c) && (a+c>b) && (b+c>a)) 
+def abrev(s:String): String = {
+	val words = s.split(" ")
+	(words(0) + " " + words(words.length - 1)) 
 }
 
+/*
+Now consider the following mathematical definition of the factorial function for non-negative
+integers:
+0! = 1
+n! = n*(n-1)*(n-2)*...*1
+Being n! = n*(n-1)! a possible Scala definition of the factorial method is:
+def fact(n: Int):Int = if (n==0) 1 else n * fact(n-1)
+Note that this method is recursive, i.e. it appears in the expression that defines it. The method
+is also said to invoke itself. The method calculation ends because the stop case is always reached
+(n = 0).
+*/
+def fact(n: Int):Int = if (n==0) 1 else n * fact(n-1)
+	
+/*
+a) Define a method that calculates the result (Int) of the following exponentiation xy
+without resorting to predefined functions.
+*/
+def exp(x:Int, y: Int):Int = if (y==0) 1 else x * exp(x, y-1)
+
+/*
+b) Define a method that receives a Int List and constructs a pair with the first and the last
+element of the list.
+
+scala> Fun.getPair(List(2,3))
+res16: (Int, Int) = (2,3)
+
+scala> Fun.getPair(List(2,3,4,5,7))
+res17: (Int, Int) = (2,7)
+
+scala> Fun.getPair(List(2,3,4,5,7,1))
+res18: (Int, Int) = (2,1)
+
+*/
+def getPair(input: List[Int]): (Int, Int) = (input.head, input.last)
+
+
+/*
+c) Define a method that, given a Int list, gives the pair with that list and its length.
+
+scala> Fun.getPair2(List(2,3,4,5,7,1))
+res19: (List[Int], Int) = (List(2, 3, 4, 5, 7, 1),6)
+
+*/
+def getPair2(input: List[Int]): (List[Int], Int) = (input, input.length)
+
+/*
+d) Define a method that, given a Double list, calculates its average. The pre-defined
+function tail of List might be useful.
+TODO
+*/
+
+def sum(n: Double): Double = if (n==1) 0 else sum(n) + sum(n-1)
+
+def div(a:Double, b:Double): Double = a/b
+
+def avg(input: List[Double]): Double = {
+	div((sum(input.length)), input.length)
+	
+}
+	
 }
