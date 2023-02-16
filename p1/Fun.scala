@@ -134,8 +134,8 @@ res17: (Int, Int) = (2,7)
 
 scala> Fun.getPair(List(2,3,4,5,7,1))
 res18: (Int, Int) = (2,1)
-
 */
+
 def getPair(input: List[Int]): (Int, Int) = (input.head, input.last)
 
 
@@ -144,23 +144,24 @@ c) Define a method that, given a Int list, gives the pair with that list and its
 
 scala> Fun.getPair2(List(2,3,4,5,7,1))
 res19: (List[Int], Int) = (List(2, 3, 4, 5, 7, 1),6)
-
 */
+
 def getPair2(input: List[Int]): (List[Int], Int) = (input, input.length)
 
 /*
 d) Define a method that, given a Double list, calculates its average. The pre-defined
 function tail of List might be useful.
-TODO
+
+scala> Fun.average(List(2,3,4,5,7,1))
+res8: Double = 3.6666666666666665
 */
 
-def sum(n: Double): Double = if (n==1) 0 else sum(n) + sum(n-1)
+def sum(lst: List[Double]): Double = if(lst.isEmpty) 0 else
+lst.head + sum(lst.tail)
 
-def div(a:Double, b:Double): Double = a/b
+def average(lst: List[Double]) = sum(lst) / lst.length	
 
-def avg(input: List[Double]): Double = {
-	div((sum(input.length)), input.length)
-	
-}
-	
+// ou
+
+def average1(lst: List[Double]) = lst.sum / lst.length
 }
