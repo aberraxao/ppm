@@ -28,11 +28,11 @@ object CoinFlipUtils {
   def printGameOver(): Unit = println("\n=== GAME OVER ===")
 
   // returns "H" for heads, "T" for tails
-  def tossCoin(r: Random): String = {
-    val i = r.nextInt(2)
+  def tossCoin(r: RandomWithState): (String, RandomWithState) = {
+    val (i, state) = r.nextInt(2)
     i match {
-      case 0 => "H"
-      case 1 => "T"
+      case 0 => ("H", state)
+      case 1 => ("T", state)
     }
   }
 
