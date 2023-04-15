@@ -8,8 +8,12 @@ object Main extends App {
   val cont = Container("Name", Map())
 
   val options = SortedMap[Int, CommandLineOption](
-    1 -> new CommandLineOption("Add", Container.addEntryG(IO_Utils.prompt("Key"), IO_Utils.prompt("Value"))),
-    //TODO
+    1 -> new CommandLineOption("Add", Container.addEntry(IO_Utils.prompt("Key"),
+      IO_Utils.prompt("Value"))),
+    2 -> CommandLineOption("Remove", Container.removeEntry(IO_Utils.prompt("Key"))),
+    3 -> CommandLineOption("Update", Container.updateEntry(IO_Utils.prompt("Key"),
+      IO_Utils.prompt("Value"))),
+    4 -> CommandLineOption("Show map content", IO_Utils.printContainer),
     0 -> new CommandLineOption("Exit", _ => sys.exit)
   )
 

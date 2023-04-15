@@ -30,5 +30,6 @@ object IO_Utils {
   def printContainer(container: Container) = {
     println("Name:" + container.name)
     container.data.toList map (x => println("Key:" + x._1) + " " + println("Value:" + x._2))
+    container
   }
 }

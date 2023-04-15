@@ -6,7 +6,7 @@ case class Container(name:String, data : Map[String, String]){
 
 object Container {
 
-  def addEntryG(key: => String, value: =>String)(container: Container): Container =
+  def addEntry(key: => String, value: =>String)(container: Container): Container =
   {
     new Container(container.name, container.data + (key -> value))
   }
@@ -21,7 +21,12 @@ object Container {
   }
    */
 
+  def removeEntry(key: => String)(container: Container): Container = {
+    new Container(container.name, container.data - key)
+  }
 
-  //TODO
+  def updateEntry(key: => String, value: => String)(container: Container): Container = {
+    new Container(container.name, container.data + (key -> value))
+  }
 
 }
