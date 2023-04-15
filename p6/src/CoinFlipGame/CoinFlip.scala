@@ -3,7 +3,6 @@ package CoinFlipGame
 import CoinFlipGame.CoinFlipUtils.{getUserInput, printGameOver, printGameState, printableFlipResult, showPrompt, tossCoin}
 
 import scala.annotation.tailrec
-import scala.util.Random
 
 case class GameState(numFlips: Int, numCorrect: Int)
 
