@@ -1,4 +1,4 @@
-package p5
+package Ficha5
 
 import scala.annotation.tailrec
 

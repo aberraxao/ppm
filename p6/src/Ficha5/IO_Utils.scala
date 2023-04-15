@@ -1,6 +1,6 @@
-package p5
+package Ficha5
 
-import p5.Turma.NT
+import Ficha5.Turma.NT
 
 import scala.io.StdIn.readLine
 import scala.util.Try

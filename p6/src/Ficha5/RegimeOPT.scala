@@ -1,4 +1,4 @@
-package p5
+package Ficha5
 
 object RegimeOPT extends Enumeration {
   type RegimeOPT = Value

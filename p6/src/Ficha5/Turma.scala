@@ -1,7 +1,7 @@
-package p5
+package Ficha5
 
-import p5.RegimeOPT.RegimeOPT
-import p5.Turma.{Aluno, Alunos, NP, Numero}
+import Ficha5.RegimeOPT.RegimeOPT
+import Ficha5.Turma.{Aluno, Alunos, NP, Numero}
 
 
 case class Turma(id: String, alunos: Alunos){
