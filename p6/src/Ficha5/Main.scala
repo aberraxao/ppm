@@ -1,5 +1,7 @@
 package p5
 
+import scala.annotation.tailrec
+
 object Main {
 
   def main(args: Array[String]): Unit = {
@@ -8,7 +10,7 @@ object Main {
 
     mainLoop(state)
 
-    //@tailrec
+    @tailrec
     def mainLoop(state: Turma) {
 
       IO_Utils.showPrompt()
@@ -19,10 +21,18 @@ object Main {
         case "C" => {
           IO_Utils.showOptionsNum()
           val userInputNum = IO_Utils.getUserInput()
-
-          //TODO
-
-          //mainLoop(newState)
+          IO_Utils.showOptionsNP()
+          val userInputNP = IO_Utils.getUserInput()
+          if (IO_Utils.myToInt(userInputNum) != None) {
+            val newState = state.changeNP(IO_Utils.myToInt(userInputNum).get,
+              IO_Utils.toNT(userInputNP))
+            IO_Utils.printTurmaState(newState)
+            mainLoop(newState)
+          }
+          else {
+            IO_Utils.showPrompt("Wrong number!")
+            mainLoop(state)
+          }
         }
         case _ => {
           IO_Utils.printTurmaState(state)
