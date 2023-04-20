@@ -7,8 +7,5 @@
    <children>
       <Button fx:id="button1" layoutX="57.0" layoutY="78.0" mnemonicParsing="false" onMouseClicked="#onButton1Clicked" text="Button" />
       <TextField fx:id="textField1" layoutX="57.0" layoutY="103.0" />
-      <Button fx:id="buttonClickMe" layoutX="187.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#onbuttonClickMeClicked" text="Click Me!" />
-      <Button fx:id="buttonToggle" layoutX="57.0" layoutY="188.0" mnemonicParsing="false" onMouseEntered="#onButtonToggleToggled" onMouseExited="#onButtonToggleUntoggled" text="ToggleButton" textFill="RED" />
-      <Label fx:id="label1" layoutX="187.0" layoutY="282.0" text="Mouse entered Toggle Button!" visible="false" />
    </children>
 </AnchorPane>
