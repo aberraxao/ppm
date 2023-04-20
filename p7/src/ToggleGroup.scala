@@ -3,11 +3,11 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
-class ToggleApp extends Application {
+class ToggleGroupApp extends Application {
   override def start(primaryStage: Stage): Unit = {
-    primaryStage.setTitle("Toggle App")
+    primaryStage.setTitle("Toggle Group App")
     val fxmlLoader =
-      new FXMLLoader(getClass.getResource("Controller2.fxml"))
+      new FXMLLoader(getClass.getResource("Controller3.fxml"))
     val mainViewRoot: Parent = fxmlLoader.load()
     val scene = new Scene(mainViewRoot)
     primaryStage.setScene(scene)
@@ -15,8 +15,8 @@ class ToggleApp extends Application {
   }
 }
 
-object FxTgApp {
+object FxTgGroupApp {
   def main(args: Array[String]): Unit = {
-    Application.launch(classOf[ToggleApp], args: _*)
+    Application.launch(classOf[ToggleGroupApp], args: _*)
   }
 }

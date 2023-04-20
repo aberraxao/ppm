@@ -1,5 +1,5 @@
 import javafx.fxml.FXML
-import javafx.scene.control.{Button, Label, TextField}
+import javafx.scene.control.TextField
 
 class Controller {
 
