@@ -5,8 +5,7 @@
   class App extends Application {
     override def start(primaryStage: Stage): Unit = {
       primaryStage.setTitle("My Hello World App")
-      val fxmlLoader =
-        new FXMLLoader(getClass.getResource("GUI_1.fxml"))
+      val fxmlLoader = new FXMLLoader(getClass.getResource("GUI_1.fxml"))
       val mainViewRoot: Parent = fxmlLoader.load()
       val scene = new Scene(mainViewRoot)
       primaryStage.setScene(scene)
