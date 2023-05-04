@@ -9,6 +9,8 @@ class Controller {
   private var button1: Button = _
   @FXML
   private  var close:Button = _
+  @FXML
+  private var swap: Button = _
 
 
   def onButton1Clicked(): Unit = {
@@ -18,7 +20,7 @@ class Controller {
     secondStage.show()
    */
     val secondStage: Stage = new Stage()
-    secondStage.initOwner(button1.getScene().getWindow)
+    secondStage.initOwner(button1.getScene.getWindow)
     secondStage.initModality(Modality.WINDOW_MODAL)
     val fxmlLoader = new FXMLLoader(getClass.getResource("GUI_2.fxml"))
     val mainViewRoot: Parent = fxmlLoader.load()
@@ -30,6 +32,13 @@ class Controller {
   def onClosedButtonClicked() : Unit ={
     // The name of the method is misleading because it actually closes the window
     close.getScene.getWindow.hide()
+  }
+
+  def onSwapButtonClicked(): Unit = {
+    // Coloca os conteúdos da cena 2 na cena 1
+    val fxmlLoader = new FXMLLoader(getClass.getResource("GUI_2.fxml"))
+    val mainViewRoot: Parent = fxmlLoader.load()
+    swap.getScene.setRoot(mainViewRoot)
   }
 
 }

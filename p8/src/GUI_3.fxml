@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller2">
+   <children>
+      <Button fx:id="lighton" layoutX="350.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onLightOnClicked" text="Ambient Light On/Off" />
+      <Button fx:id="lightoff" layoutX="350.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onLightOffClicked" prefHeight="24.0" prefWidth="156.0" text="Point Light On/Off" />
+      <Slider fx:id="slider" layoutX="36.0" layoutY="106.0" onMouseDragged="#onMouseDragged" prefHeight="16.0" prefWidth="242.0" />
+      <AmbientLight fx:id="ambientLight" layoutX="210.0" layoutY="143.0">
+         <color>
+            <Color red="1.0" green="0.7490196228027344" />
+         </color></AmbientLight>
+      <Label layoutX="108.0" layoutY="86.0" text="Rotation X axis" />
+      <Box fx:id="box" depth="100" height="100" layoutX="272.0" layoutY="233.0" width="100" />
+      <PointLight color="#7fff00" layoutX="210.0" layoutY="143.0" lightOn="true" />
+   </children>
+</AnchorPane>
